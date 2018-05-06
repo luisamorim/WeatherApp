@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol NetworkController{
-    func fetchCurrentWeatherData(city:String, completionHandler: @escaping (WeatherData?, NextworkControllerError?) -> Void)
+    func fetchCurrentWeatherData(city:String, completionHandler: @escaping (WeatherData?, NetworkControllerError?) -> Void)
 }
 
 public struct WeatherData {
@@ -24,7 +24,7 @@ public enum TemperatureUnit:String{
     case imperial = "imperial"
 }
 
-public enum NextworkControllerError:Error {
+public enum NetworkControllerError:Error {
     case invalidURL(String)
     case invalidPlayload(URL)
     case forwarded(Error)

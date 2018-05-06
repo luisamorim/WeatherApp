@@ -15,6 +15,7 @@
 		3748027C1F88B8C000CBD4A1 /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3748027B1F88B8C000CBD4A1 /* WeatherAppTests.swift */; };
 		3A955A6E209F2A3200C2A391 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A955A6D209F2A3200C2A391 /* NetworkController.swift */; };
 		3A955A70209F2D0700C2A391 /* OpenWeatherMapNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A955A6F209F2D0700C2A391 /* OpenWeatherMapNetworkController.swift */; };
+		3A955A72209F307100C2A391 /* OpenWeatherMapDataMappings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A955A71209F307100C2A391 /* OpenWeatherMapDataMappings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		3748027D1F88B8C000CBD4A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A955A6D209F2A3200C2A391 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		3A955A6F209F2D0700C2A391 /* OpenWeatherMapNetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapNetworkController.swift; sourceTree = "<group>"; };
+		3A955A71209F307100C2A391 /* OpenWeatherMapDataMappings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapDataMappings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				3A955A6D209F2A3200C2A391 /* NetworkController.swift */,
 				3A955A6F209F2D0700C2A391 /* OpenWeatherMapNetworkController.swift */,
+				3A955A71209F307100C2A391 /* OpenWeatherMapDataMappings.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			files = (
 				374802691F88B8C000CBD4A1 /* ViewController.swift in Sources */,
 				374802671F88B8C000CBD4A1 /* AppDelegate.swift in Sources */,
+				3A955A72209F307100C2A391 /* OpenWeatherMapDataMappings.swift in Sources */,
 				3A955A70209F2D0700C2A391 /* OpenWeatherMapNetworkController.swift in Sources */,
 				3A955A6E209F2A3200C2A391 /* NetworkController.swift in Sources */,
 			);
@@ -370,10 +374,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W44KDF9J7R;
+				DEVELOPMENT_TEAM = 26TFSXJLG9;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.leakka.WeatherApp;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.amorim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -385,10 +389,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W44KDF9J7R;
+				DEVELOPMENT_TEAM = 26TFSXJLG9;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.leakka.WeatherApp;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.amorim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

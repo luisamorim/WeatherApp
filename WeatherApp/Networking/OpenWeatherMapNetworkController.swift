@@ -4,30 +4,41 @@ final class OpenWeatherMapNetworkController: NetworkController {
     
     public var tempUnit:TemperatureUnit = .imperial
     
-    func fetchCurrentWeatherData(city: String, completionHandler: @escaping (WeatherData?, NextworkControllerError?) -> Void) {
+    func fetchCurrentWeatherData(city: String, completionHandler: @escaping (WeatherData?, NetworkControllerError?) -> Void) {
         
         let session = URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: OperationQueue.main)
         
-        let endpoint = "api.openweathermap.org/data/2.5/weather?q=\(city)&units=\(tempUnit)&appid=\(API.key)"
+        let endpoint = "http://api.openweathermap.org/data/2.5/weather?q=\(city)&units=\(tempUnit)&appid=\(API.key)"
         
         let safeURLString = endpoint.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         
         guard let endpointURL = URL(string: safeURLString!) else {
-            completionHandler(nil,NextworkControllerError.invalidURL(safeURLString!))
+            completionHandler(nil,NetworkControllerError.invalidURL(safeURLString!))
             return
         }
         
         let dataTask = session.dataTask(with: endpointURL) { (data, response, error) in
             guard error == nil else {
-                completionHandler(nil,NextworkControllerError.forwarded(error!))
+                completionHandler(nil,NetworkControllerError.forwarded(error!))
+                return
+          
+            }
+            
+            guard let jsonData = data else {
+                completionHandler(nil, NetworkControllerError.invalidPlayload(endpointURL))
                 return
             }
+            
+            self.decode(jsonData:jsonData, endpointURL: endpointURL, completionHandler:completionHandler)
+            
         }
+        
+        dataTask.resume()
         
     }
     
 
-    /*
+    
      private func decode(jsonData: Data, endpointURL: URL, completionHandler: @escaping (WeatherData?, NetworkControllerError?) -> Void) {
      let decoder = JSONDecoder()
      do {
@@ -39,10 +50,10 @@ final class OpenWeatherMapNetworkController: NetworkController {
      completionHandler(nil, NetworkControllerError.forwarded(error))
      }
      }
-     */
+    
 }
 
 
 private enum API {
-    static let key = "ADD_YOUR_API_KEY_HERE"
+    static let key = "e062bac9b52475c06e58b6a073baced8"
 }
